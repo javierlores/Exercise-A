@@ -16,9 +16,13 @@ java -cp .:test/junit.jar:test/hamcrest.jar test/ThreadedCounterTestsRunner
 -----------
 javadoc -cp .:test/junit.jar -d javadoc src test
 
-## Build Jar
+## Build Runnable Jar
 -----------
-jar cf threadedcounter.jar src/ThreadedCounter.java
+jar -cvfm threadedcounter.jar manifest.txt src/*.class
+
+## Execute Runnable Jar
+-----------
+java -jar threadedcounter.jar
 
 
 
